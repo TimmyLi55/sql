@@ -1,6 +1,6 @@
-package Page;
+package page;
 
-import Data.DataHelper;
+import data.DataHelper;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.Keys;
 
@@ -14,19 +14,11 @@ public class AuthPage {
     private SelenideElement actionButton = $("[data-test-id=action-login]");
     private SelenideElement errorNotification = $("[data-test-id=error-notification]");
 
-    public VerificationPage validLogin() {
-        loginField.setValue(DataHelper.getValidFirstUser().getLogin());
-        passwordField.setValue(DataHelper.getValidFirstUser().getPassword());
+    public VerificationPage validLogin(DataHelper.AuthInfo info) {
+        loginField.setValue(info.getLogin());
+        passwordField.setValue(info.getPassword());
         actionButton.click();
         return new VerificationPage();
-
-    }
-
-    public AuthPage noValidLogin() {
-        loginField.setValue(DataHelper.getRandomUser().getLogin());
-        passwordField.setValue((DataHelper.getRandomUser().getPassword()));
-        actionButton.click();
-        return this;
     }
 
     public AuthPage visibleErrorNotification() {

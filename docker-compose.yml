@@ -7,7 +7,7 @@ services:
     volumes:
     - ./schema:/docker-entrypoint-initdb.d:ro
     environment:
-    - MYSQL_DATABASE=test
-    - MYSQL_USER=test
-    - MYSQL_PASSWORD=12345
+    - MYSQL_DATABASE=app
+    - MYSQL_USER=app
+    - MYSQL_PASSWORD=pass
     - MYSQL_RANDOM_ROOT_PASSWORD=yes

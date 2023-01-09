@@ -1,6 +1,5 @@
-package Data;
+package data;
 
-import com.codeborne.selenide.Driver;
 import lombok.SneakyThrows;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
@@ -17,7 +16,7 @@ public class SQLConnect {
     private static QueryRunner runner = new QueryRunner();
 
     private static Connection connect() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "test", "12345");
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "app", "pass");
     }
 
     public static DataHelper.VerificationCode getVerifyCode() {
